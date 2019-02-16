@@ -1,0 +1,9 @@
+version: '3.2'
+services:
+  watcher:
+    build: watcher
+    volumes:
+      - ./app:/www/sp:cached
+    environment:
+      WATCH: /www/sp/public_html/static
+      PATTERN: '\.(css|s[ac]ss)$$' # $$ to escape $
